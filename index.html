@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>edu-fpar — outils pédagogiques interactifs</title>
+<meta name="description" content="Des outils pour enseigner autrement : on manipule, on essaie, on comprend. Gratuits, dans le navigateur, sans installation ni compte.">
+<link rel="canonical" href="https://edu-fpar.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="edu-fpar — outils pédagogiques interactifs">
+<meta property="og:description" content="Des outils pour enseigner autrement : on manipule, on essaie, on comprend.">
+<meta property="og:url" content="https://edu-fpar.github.io/">
+<meta property="og:image" content="https://raw.githubusercontent.com/edu-fpar/contract-lab/main/contract-lab.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🎓%3C/text%3E%3C/svg%3E">
+<script>
+  (function () {
+    var t = null; try { t = localStorage.getItem('edu-fpar.theme'); } catch (e) {}
+    if (t !== 'light' && t !== 'dark') t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', t);
+    var l = null; try { l = localStorage.getItem('edu-fpar.lang'); } catch (e) {}
+    var q = new URLSearchParams(location.search).get('lang');
+    if (q === 'fr' || q === 'en') l = q;
+    if (l !== 'fr' && l !== 'en') l = /^fr\b/i.test(navigator.language || 'fr') ? 'fr' : 'en';
+    document.documentElement.setAttribute('lang', l);
+  })();
+</script>
+<style>
+  :root {
+    --bg: #f6f7fb; --panel: #ffffff; --ink: #1e293b; --muted: #64748b; --line: #e2e8f0;
+    --accent: #4f46e5; --accent-soft: #eef2ff; --shadow: 0 6px 24px rgba(15, 23, 42, .08);
+    color-scheme: light;
+  }
+  :root[data-theme="dark"] {
+    --bg: #0b1120; --panel: #141c2f; --ink: #e2e8f0; --muted: #94a3b8; --line: #2a3550;
+    --accent: #818cf8; --accent-soft: #252a4d; --shadow: 0 6px 24px rgba(0, 0, 0, .35);
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.55 "Segoe UI", system-ui, -apple-system, Roboto, sans-serif; }
+  a { color: var(--accent); }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 16px; }
+  header { padding: 18px 0 8px; }
+  .top { display: flex; align-items: center; gap: 10px; }
+  .brand { font-weight: 800; font-size: 18px; display: flex; align-items: center; gap: 8px; }
+  .top .sp { flex: 1; }
+  .top button { border: 1px solid var(--line); background: var(--panel); color: var(--ink); border-radius: 8px; padding: 5px 10px; font: inherit; font-size: 14px; cursor: pointer; }
+  .top button:hover { border-color: var(--accent); }
+  .hero { padding: 40px 0 26px; }
+  .hero h1 { font-size: clamp(28px, 4.4vw, 44px); line-height: 1.15; margin: 0 0 12px; letter-spacing: -.01em; }
+  .hero p { font-size: 18px; color: var(--muted); max-width: 760px; margin: 0; }
+  .pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+  .pill { background: var(--accent-soft); color: var(--accent); border-radius: 999px; padding: 4px 12px; font-size: 14px; font-weight: 600; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 18px; padding: 10px 0 30px; }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; box-shadow: var(--shadow); display: flex; flex-direction: column; text-decoration: none; color: inherit; transition: transform .15s, border-color .15s; }
+  .card:hover { transform: translateY(-3px); border-color: var(--accent); }
+  .card img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top left; display: block; border-bottom: 1px solid var(--line); background: var(--line); }
+  .card .body { padding: 14px 18px 18px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+  .card h2 { font-size: 20px; margin: 0; display: flex; align-items: center; gap: 8px; }
+  .card .who { font-size: 13px; color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: .04em; }
+  .card p { margin: 0; color: var(--muted); font-size: 15px; }
+  .card .go { margin-top: auto; padding-top: 8px; font-weight: 700; color: var(--accent); font-size: 15px; }
+  .more { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; margin: 0 0 34px; }
+  .more a { display: block; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 12px 16px; text-decoration: none; color: inherit; }
+  .more a:hover { border-color: var(--accent); }
+  .more b { display: block; }
+  .more span { color: var(--muted); font-size: 14px; }
+  h3.sec { font-size: 14px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: 10px 0 12px; }
+  footer { border-top: 1px solid var(--line); padding: 20px 0 36px; color: var(--muted); font-size: 14px; }
+  footer p { margin: 6px 0; }
+  [data-l] { display: none; }
+  html[lang="fr"] [data-l="fr"], html[lang="en"] [data-l="en"] { display: revert; }
+</style>
+</head>
+<body>
+<header class="wrap">
+  <div class="top">
+    <div class="brand">🎓 edu-fpar</div>
+    <div class="sp"></div>
+    <button id="lang" title="Language / langue"></button>
+    <button id="theme" title="Mode jour / nuit — light / dark"></button>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <h1 data-l="fr">Des outils pour enseigner autrement : on manipule, on essaie, on comprend.</h1>
+    <h1 data-l="en">Tools to teach differently: learners handle things, try, and understand.</h1>
+    <p data-l="fr">Créés avec l'aide de l'IA par un formateur, pour les enseignants, les formateurs et leurs élèves. Tout fonctionne dans le navigateur, sans installation ni compte, et aucune donnée n'est envoyée.</p>
+    <p data-l="en">Built with AI by a trainer, for teachers, trainers and their students. Everything runs in the browser: no install, no account, no data sent anywhere.</p>
+    <div class="pills">
+      <span class="pill" data-l="fr">Gratuit</span><span class="pill" data-l="en">Free</span>
+      <span class="pill" data-l="fr">Sur ordinateur et téléphone</span><span class="pill" data-l="en">Desktop and phone</span>
+      <span class="pill" data-l="fr">Export SCORM pour Moodle</span><span class="pill" data-l="en">SCORM export for Moodle</span>
+      <span class="pill" data-l="fr">Scénarios générés par IA</span><span class="pill" data-l="en">AI-generated scenarios</span>
+    </div>
+  </section>
+
+  <section class="grid">
+    <a class="card" href="https://edu-fpar.github.io/contract-lab/" data-href-en="https://edu-fpar.github.io/contract-lab/?lang=en">
+      <img src="https://raw.githubusercontent.com/edu-fpar/contract-lab/main/contract-lab.png" alt="Contract Lab" loading="lazy">
+      <div class="body">
+        <span class="who" data-l="fr">RH · droit du travail</span><span class="who" data-l="en">HR · employment law</span>
+        <h2>📜 Contract Lab</h2>
+        <p data-l="fr">Construire un contrat de travail clause par clause, voir les garde-fous qui rendent une clause valable et les incompatibilités, dérouler licenciements, ruptures conventionnelles et démissions.</p>
+        <p data-l="en">Build an employment contract clause by clause, see which safeguards make a clause valid, and walk through dismissals and other terminations step by step. French law and English law.</p>
+        <span class="go" data-l="fr">Ouvrir →</span><span class="go" data-l="en">Open →</span>
+      </div>
+    </a>
+    <a class="card" href="https://edu-fpar.github.io/capital-lab/">
+      <img src="https://raw.githubusercontent.com/edu-fpar/capital-lab/main/capital-lab-libre.png" alt="Capital Lab" loading="lazy">
+      <div class="body">
+        <span class="who" data-l="fr">Finance · droit des sociétés</span><span class="who" data-l="en">Finance · company law</span>
+        <h2>◆ Capital Lab</h2>
+        <p data-l="fr">Comment on peut contrôler une société en étant minoritaire : chaînes de participations, pactes, droits de vote double.</p>
+        <p data-l="en">How you can control a company while being a minority shareholder: chains of holdings, pacts, double voting rights.</p>
+        <span class="go" data-l="fr">Ouvrir →</span><span class="go" data-l="en">Open →</span>
+      </div>
+    </a>
+    <a class="card" href="https://edu-fpar.github.io/star-nav/#level-1">
+      <img src="https://raw.githubusercontent.com/edu-fpar/star-nav/main/screenshots/hero-en.png" alt="Star Nav" loading="lazy">
+      <div class="body">
+        <span class="who" data-l="fr">Enfants dès 8 ans</span><span class="who" data-l="en">Children aged 8+</span>
+        <h2>🚀 Star Nav</h2>
+        <p data-l="fr">La gravité et les trajectoires, sans une seule équation : 25 niveaux de navigation spatiale.</p>
+        <p data-l="en">Gravity and trajectories without a single equation, in 25 levels of space navigation.</p>
+        <span class="go" data-l="fr">Jouer →</span><span class="go" data-l="en">Play →</span>
+      </div>
+    </a>
+    <a class="card" href="https://edu-fpar.github.io/micro-learning-app/">
+      <img src="https://raw.githubusercontent.com/edu-fpar/micro-learning-app/main/docs/images/studio-en.webp" alt="MicroLearn Studio" loading="lazy">
+      <div class="body">
+        <span class="who" data-l="fr">Formateurs</span><span class="who" data-l="en">Trainers</span>
+        <h2>🎞 MicroLearn Studio</h2>
+        <p data-l="fr">Transformer un cours Markdown en diaporama interactif, exportable en SCORM.</p>
+        <p data-l="en">Turn a Markdown course into an interactive slideshow, exportable as a SCORM package for any LMS.</p>
+        <span class="go" data-l="fr">Ouvrir →</span><span class="go" data-l="en">Open →</span>
+      </div>
+    </a>
+    <a class="card" href="https://edu-fpar.github.io/perspective-grid/">
+      <img src="https://raw.githubusercontent.com/edu-fpar/perspective-grid/main/docs/images/comparaison-devoilement-fr.png" alt="Regards croisés / Perspective Grid" loading="lazy">
+      <div class="body">
+        <span class="who" data-l="fr">Toutes disciplines</span><span class="who" data-l="en">Any subject</span>
+        <h2>🔀 <span data-l="fr">Regards croisés</span><span data-l="en">Perspective Grid</span></h2>
+        <p data-l="fr">Comment plusieurs points de vue classent différemment les mêmes éléments. Une grille se crée avec n'importe quelle IA.</p>
+        <p data-l="en">How different viewpoints rank the same items differently. Any AI can build a grid for you.</p>
+        <span class="go" data-l="fr">Ouvrir →</span><span class="go" data-l="en">Open →</span>
+      </div>
+    </a>
+  </section>
+
+  <h3 class="sec" data-l="fr">Aussi</h3><h3 class="sec" data-l="en">Also</h3>
+  <section class="more">
+    <a href="https://edu-fpar.github.io/docs-badge/"><b>📷 <span data-l="fr">Mes photos de famille</span><span data-l="en">Family photos</span></b>
+      <span data-l="fr">Trier, dédoublonner et étiqueter des documents photographiés.</span><span data-l="en">Sort, deduplicate and tag photographed documents.</span></a>
+    <a href="https://edu-fpar.github.io/services/"><b>🔌 Services</b>
+      <span data-l="fr">Enseigner le « vibe coding » avec des API.</span><span data-l="en">Teaching "vibe coding" with APIs.</span></a>
+    <a href="https://www.youtube.com/c/enparlantdebureautiqueformezvous"><b>🎬 YouTube</b>
+      <span data-l="fr">« En parlant de bureautique, formez-vous »</span><span data-l="en">"En parlant de bureautique, formez-vous" (in French)</span></a>
+  </section>
+</main>
+
+<footer class="wrap">
+  <p data-l="fr">✏️ Vous utilisez un de ces outils en classe ? Racontez-moi comment dans une <a href="https://github.com/edu-fpar/edu-fpar/issues">issue</a> : vos retours m'aident à les améliorer.</p>
+  <p data-l="en">✏️ Using one of these tools in class? Tell me how in an <a href="https://github.com/edu-fpar/edu-fpar/issues">issue</a>: your feedback helps me improve them.</p>
+  <p><a href="https://github.com/edu-fpar">GitHub edu-fpar</a> · <a href="https://github.com/fxpar">fxpar</a></p>
+</footer>
+
+<script>
+  (function () {
+    var html = document.documentElement, lb = document.getElementById('lang'), tb = document.getElementById('theme');
+    function paint() {
+      var en = html.lang === 'en';
+      lb.textContent = en ? 'FR' : 'EN';
+      tb.textContent = html.getAttribute('data-theme') === 'dark' ? '☀️' : '🌙';
+      document.title = en ? 'edu-fpar — interactive teaching tools' : 'edu-fpar — outils pédagogiques interactifs';
+      document.querySelectorAll('[data-href-en]').forEach(function (a) {
+        if (!a.dataset.hrefFr) a.dataset.hrefFr = a.getAttribute('href');
+        a.setAttribute('href', en ? a.dataset.hrefEn : a.dataset.hrefFr);
+      });
+    }
+    lb.onclick = function () { html.lang = html.lang === 'en' ? 'fr' : 'en'; try { localStorage.setItem('edu-fpar.lang', html.lang); } catch (e) {} paint(); };
+    tb.onclick = function () { var d = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'; html.setAttribute('data-theme', d); try { localStorage.setItem('edu-fpar.theme', d); } catch (e) {} paint(); };
+    paint();
+  })();
+</script>
+</body>
+</html>
