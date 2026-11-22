@@ -65,6 +65,10 @@
   .more a:hover { border-color: var(--accent); }
   .more b { display: block; }
   .more span { color: var(--muted); font-size: 14px; }
+  h2.pole { font-size: 22px; margin: 18px 0 4px; }
+  p.pole-sub { color: var(--muted); margin: 0 0 6px; max-width: 760px; }
+  .top a.nav { color: var(--ink); text-decoration: none; font-size: 14px; }
+  .top a.nav:hover { color: var(--accent); }
   h3.sec { font-size: 14px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: 10px 0 12px; }
   footer { border-top: 1px solid var(--line); padding: 20px 0 36px; color: var(--muted); font-size: 14px; }
   footer p { margin: 6px 0; }
@@ -77,6 +81,7 @@
   <div class="top">
     <div class="brand">🎓 edu-fpar</div>
     <div class="sp"></div>
+    <a class="nav" href="about.html"><span data-l="fr">À propos</span><span data-l="en">About</span></a>
     <button id="lang" title="Language / langue"></button>
     <button id="theme" title="Mode jour / nuit — light / dark"></button>
   </div>
@@ -96,6 +101,9 @@
     </div>
   </section>
 
+  <h2 class="pole" data-l="fr">Enseignement supérieur : droit et gestion</h2><h2 class="pole" data-l="en">Higher education: law &amp; business</h2>
+  <p class="pole-sub" data-l="fr">Pour les cours de droit du travail, de droit des sociétés, de gouvernance et de systèmes d'information de gestion, en université, en école de commerce, en DCG/BTS ou en formation RH.</p>
+  <p class="pole-sub" data-l="en">For employment law, company law, corporate governance and business information systems courses, in universities, business schools and HR training.</p>
   <section class="grid">
     <a class="card" href="https://edu-fpar.github.io/contract-lab/" data-href-en="https://edu-fpar.github.io/contract-lab/?lang=en">
       <img src="https://raw.githubusercontent.com/edu-fpar/contract-lab/main/contract-lab.png" data-src-en="https://raw.githubusercontent.com/edu-fpar/contract-lab/main/contract-lab-en.png" alt="Contract Lab" loading="lazy">
@@ -117,16 +125,22 @@
         <span class="go" data-l="fr">Ouvrir →</span><span class="go" data-l="en">Open →</span>
       </div>
     </a>
-    <a class="card" href="https://edu-fpar.github.io/star-nav/#level-1">
-      <img src="https://raw.githubusercontent.com/edu-fpar/star-nav/main/screenshots/hero-en.png" alt="Star Nav" loading="lazy">
+    <a class="card" href="https://edu-fpar.github.io/sql-lab/" data-href-en="https://edu-fpar.github.io/sql-lab/?lang=en#demo-en/intro">
+      <img src="https://raw.githubusercontent.com/edu-fpar/sql-lab/main/docs/img/fr/cinema-sql.png" data-src-en="https://raw.githubusercontent.com/edu-fpar/sql-lab/main/docs/img/en/cinema-sql.png" alt="SQL Lab" loading="lazy">
       <div class="body">
-        <span class="who" data-l="fr">Enfants dès 8 ans</span><span class="who" data-l="en">Children aged 8+</span>
-        <h2>🚀 Star Nav</h2>
-        <p data-l="fr">La gravité et les trajectoires, sans une seule équation : 25 niveaux de navigation spatiale.</p>
-        <p data-l="en">Gravity and trajectories without a single equation, in 25 levels of space navigation.</p>
-        <span class="go" data-l="fr">Jouer →</span><span class="go" data-l="en">Play →</span>
+        <span class="who" data-l="fr">Gestion · DCG UE8 · BTS</span><span class="who" data-l="en">Business · information systems</span>
+        <h2>🗄 SQL Lab</h2>
+        <p data-l="fr">S'entraîner aux requêtes SQL sur les annales du DCG : résultat comparé à l'attendu, diagnostic des erreurs, schéma relationnel et processus à construire, correction pas à pas animée.</p>
+        <p data-l="en">Practise SQL queries in the browser: results checked against the expected ones, error diagnosis, schema and process design questions, animated step-by-step solutions. English demo included.</p>
+        <span class="go" data-l="fr">Ouvrir →</span><span class="go" data-l="en">Open →</span>
       </div>
     </a>
+  </section>
+
+  <h2 class="pole" data-l="fr">Pour les formateurs et les enseignants</h2><h2 class="pole" data-l="en">For trainers and teachers</h2>
+  <p class="pole-sub" data-l="fr">Concevoir ses propres modules, quelle que soit la discipline, et les déposer dans Moodle ou un autre LMS.</p>
+  <p class="pole-sub" data-l="en">Design your own modules in any subject, and upload them to Moodle or any other LMS.</p>
+  <section class="grid">
     <a class="card" href="https://edu-fpar.github.io/micro-learning-app/">
       <img src="https://raw.githubusercontent.com/edu-fpar/micro-learning-app/main/docs/images/studio-en.webp" alt="MicroLearn Studio" loading="lazy">
       <div class="body">
@@ -151,6 +165,8 @@
 
   <h3 class="sec" data-l="fr">Aussi</h3><h3 class="sec" data-l="en">Also</h3>
   <section class="more">
+    <a href="https://edu-fpar.github.io/star-nav/#level-1"><b>🚀 Star Nav</b>
+      <span data-l="fr">Pour les enfants dès 8 ans : la gravité et les trajectoires, sans une seule équation.</span><span data-l="en">For children aged 8+: gravity and trajectories without a single equation.</span></a>
     <a href="https://edu-fpar.github.io/docs-badge/"><b>📷 <span data-l="fr">Mes photos de famille</span><span data-l="en">Family photos</span></b>
       <span data-l="fr">Trier, dédoublonner et étiqueter des documents photographiés.</span><span data-l="en">Sort, deduplicate and tag photographed documents.</span></a>
     <a href="https://edu-fpar.github.io/services/"><b>🔌 Services</b>
@@ -161,9 +177,11 @@
 </main>
 
 <footer class="wrap">
-  <p data-l="fr">✏️ Vous utilisez un de ces outils en classe ? Racontez-moi comment dans une <a href="https://github.com/edu-fpar/edu-fpar/issues">issue</a> : vos retours m'aident à les améliorer.</p>
-  <p data-l="en">✏️ Using one of these tools in class? Tell me how in an <a href="https://github.com/edu-fpar/edu-fpar/issues">issue</a>: your feedback helps me improve them.</p>
-  <p><a href="https://github.com/edu-fpar">GitHub edu-fpar</a> · <a href="https://github.com/fxpar">fxpar</a></p>
+  <p data-l="fr">✏️ Vous utilisez un de ces outils en cours ? <a href="https://www.linkedin.com/in/francois-parlant/">Dites-le-moi sur LinkedIn</a> ou dans une <a href="https://github.com/edu-fpar/edu-fpar/issues">issue GitHub</a> : vos retours m'aident à les améliorer et à les faire connaître.</p>
+  <p data-l="en">✏️ Using one of these tools in class? <a href="https://www.linkedin.com/in/francois-parlant/">Tell me on LinkedIn</a> or in a <a href="https://github.com/edu-fpar/edu-fpar/issues">GitHub issue</a>: your feedback helps me improve them and spread the word.</p>
+  <p data-l="fr">© 2026 François Parlant · Outils sous licence <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr">CC BY-NC-SA 4.0</a> : usage libre en classe et en formation, usage commercial sur accord.</p>
+  <p data-l="en">© 2026 François Parlant · Tools licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>: free to use in class and in training, commercial use by agreement.</p>
+  <p><a href="about.html"><span data-l="fr">À propos · contact · partenariats · citer</span><span data-l="en">About · contact · partnerships · how to cite</span></a> · <a href="https://www.linkedin.com/in/francois-parlant/">LinkedIn</a> · <a href="https://github.com/edu-fpar">GitHub edu-fpar</a></p>
 </footer>
 
 <script>

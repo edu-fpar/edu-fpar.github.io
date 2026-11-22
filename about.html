@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>À propos — edu-fpar</title>
+<meta name="description" content="Qui conçoit les outils edu-fpar, comment me contacter, licence, partenariats et comment citer les outils.">
+<link rel="canonical" href="https://edu-fpar.github.io/about.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🎓%3C/text%3E%3C/svg%3E">
+<script>
+  (function () {
+    var t = null; try { t = localStorage.getItem('edu-fpar.theme'); } catch (e) {}
+    if (t !== 'light' && t !== 'dark') t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', t);
+    var l = null; try { l = localStorage.getItem('edu-fpar.lang'); } catch (e) {}
+    var q = new URLSearchParams(location.search).get('lang');
+    if (q === 'fr' || q === 'en') l = q;
+    if (l !== 'fr' && l !== 'en') l = /^fr\b/i.test(navigator.language || 'fr') ? 'fr' : 'en';
+    document.documentElement.setAttribute('lang', l);
+  })();
+</script>
+<style>
+  :root {
+    --bg: #f6f7fb; --panel: #ffffff; --ink: #1e293b; --muted: #64748b; --line: #e2e8f0;
+    --accent: #4f46e5; --accent-soft: #eef2ff; --shadow: 0 6px 24px rgba(15, 23, 42, .08);
+    color-scheme: light;
+  }
+  :root[data-theme="dark"] {
+    --bg: #0b1120; --panel: #141c2f; --ink: #e2e8f0; --muted: #94a3b8; --line: #2a3550;
+    --accent: #818cf8; --accent-soft: #252a4d; --shadow: 0 6px 24px rgba(0, 0, 0, .35);
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.6 "Segoe UI", system-ui, -apple-system, Roboto, sans-serif; }
+  a { color: var(--accent); }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 0 16px; }
+  header { padding: 18px 0 8px; }
+  .top { display: flex; align-items: center; gap: 10px; }
+  .brand { font-weight: 800; font-size: 18px; text-decoration: none; color: var(--ink); }
+  .top .sp { flex: 1; }
+  .top button { border: 1px solid var(--line); background: var(--panel); color: var(--ink); border-radius: 8px; padding: 5px 10px; font: inherit; font-size: 14px; cursor: pointer; }
+  .top button:hover { border-color: var(--accent); }
+  h1 { font-size: clamp(28px, 4.4vw, 40px); line-height: 1.15; margin: 32px 0 10px; }
+  .lead { font-size: 18px; color: var(--muted); margin: 0 0 24px; }
+  section.box { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow); padding: 18px 22px; margin: 0 0 18px; }
+  section.box h2 { font-size: 20px; margin: 0 0 8px; }
+  section.box p { margin: 6px 0; }
+  section.box ul { margin: 6px 0; padding-left: 22px; }
+  .btn { display: inline-block; background: var(--accent); color: #fff; border-radius: 10px; padding: 8px 16px; font-weight: 700; text-decoration: none; margin-top: 6px; }
+  :root[data-theme="dark"] .btn { color: #0b1120; }
+  .cite { list-style: none; padding: 0 !important; }
+  .cite li { background: var(--accent-soft); border-radius: 10px; padding: 8px 12px; margin: 8px 0; font-size: 15px; overflow-wrap: anywhere; }
+  .muted { color: var(--muted); font-size: 14px; }
+  footer { border-top: 1px solid var(--line); padding: 20px 0 36px; color: var(--muted); font-size: 14px; margin-top: 26px; }
+  [data-l] { display: none; }
+  html[lang="fr"] [data-l="fr"], html[lang="en"] [data-l="en"] { display: revert; }
+</style>
+</head>
+<body>
+<header class="wrap">
+  <div class="top">
+    <a class="brand" href="./">🎓 edu-fpar</a>
+    <div class="sp"></div>
+    <button id="lang" title="Language / langue"></button>
+    <button id="theme" title="Mode jour / nuit — light / dark"></button>
+  </div>
+</header>
+
+<main class="wrap">
+  <h1 data-l="fr">À propos</h1><h1 data-l="en">About</h1>
+  <p class="lead" data-l="fr">Qui conçoit ces outils, comment me joindre, ce que vous pouvez en faire et comment les citer.</p>
+  <p class="lead" data-l="en">Who builds these tools, how to reach me, what you may do with them, and how to cite them.</p>
+
+  <section class="box">
+    <h2 data-l="fr">👋 Qui suis-je ?</h2><h2 data-l="en">👋 Who am I?</h2>
+    <p data-l="fr">Je m'appelle François Parlant, je suis formateur. Je conçois ces outils avec l'aide de l'IA, pour les enseignants, les formateurs et leurs élèves : on y manipule des notions au lieu de les mémoriser. Je publie aussi des tutoriels de bureautique sur ma chaîne YouTube <a href="https://www.youtube.com/c/enparlantdebureautiqueformezvous">« En parlant de bureautique, formez-vous »</a>.</p>
+    <p data-l="en">My name is François Parlant and I am a trainer. I build these tools with the help of AI, for teachers, trainers and their students: learners handle ideas instead of memorising them. I also publish office software tutorials (in French) on my YouTube channel <a href="https://www.youtube.com/c/enparlantdebureautiqueformezvous">"En parlant de bureautique, formez-vous"</a>.</p>
+    <p data-l="fr">Tous les outils fonctionnent dans le navigateur, sans compte ni installation, et <b>n'envoient aucune donnée</b>.</p>
+    <p data-l="en">Every tool runs in the browser, with no account and no install, and <b>sends no data anywhere</b>.</p>
+  </section>
+
+  <section class="box">
+    <h2 data-l="fr">✉️ Me contacter</h2><h2 data-l="en">✉️ Get in touch</h2>
+    <p data-l="fr">Une question, une idée de scénario, un projet de partenariat : écrivez-moi sur LinkedIn.</p>
+    <p data-l="en">A question, an idea for a scenario, a partnership project: message me on LinkedIn.</p>
+    <a class="btn" href="https://www.linkedin.com/in/francois-parlant/"><span data-l="fr">Mon profil LinkedIn</span><span data-l="en">My LinkedIn profile</span></a>
+  </section>
+
+  <section class="box">
+    <h2 data-l="fr">🏫 Vous l'utilisez en cours ?</h2><h2 data-l="en">🏫 Using it in class?</h2>
+    <p data-l="fr">Comme les outils ne collectent aucune statistique, je ne sais pas qui s'en sert. Dites-moi simplement quel outil, avec quel public et ce que vous en avez pensé : ces retours m'aident à les améliorer et à les faire connaître.</p>
+    <p data-l="en">Since the tools collect no statistics, I don't know who uses them. Just tell me which tool, with which learners, and what you thought: this feedback helps me improve them and spread the word.</p>
+    <p><a href="https://www.linkedin.com/in/francois-parlant/">LinkedIn</a> · <a href="https://github.com/edu-fpar/edu-fpar/issues"><span data-l="fr">issue GitHub</span><span data-l="en">GitHub issue</span></a></p>
+  </section>
+
+  <section class="box">
+    <h2 data-l="fr">📄 Licence</h2><h2 data-l="en">📄 License</h2>
+    <p data-l="fr">Les outils sont sous licence <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr">Creative Commons BY-NC-SA 4.0</a> :</p>
+    <p data-l="en">The tools are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons BY-NC-SA 4.0</a>:</p>
+    <ul data-l="fr">
+      <li><b>en classe et en formation</b>, par un enseignant ou un établissement : usage libre, en citant l'auteur ;</li>
+      <li><b>adaptations</b> : permises, à partager sous la même licence ;</li>
+      <li><b>usage commercial</b> : sur accord (voir ci-dessous).</li>
+    </ul>
+    <ul data-l="en">
+      <li><b>in class and in training</b>, by a teacher or an institution: free to use, with credit to the author;</li>
+      <li><b>adaptations</b>: allowed, shared under the same license;</li>
+      <li><b>commercial use</b>: by agreement (see below).</li>
+    </ul>
+  </section>
+
+  <section class="box">
+    <h2 data-l="fr">🤝 Partenariats et usage commercial</h2><h2 data-l="en">🤝 Partnerships and commercial use</h2>
+    <p data-l="fr">Organismes de formation, éditeurs, établissements : je peux vous proposer</p>
+    <p data-l="en">Training companies, publishers, institutions: I can offer</p>
+    <ul data-l="fr">
+      <li>une <b>licence commerciale</b>, y compris en marque blanche ;</li>
+      <li>des <b>scénarios sur mesure</b> (vos cas, votre droit, votre vocabulaire) ;</li>
+      <li>des <b>paquets SCORM personnalisés</b> et leur intégration dans votre LMS.</li>
+    </ul>
+    <ul data-l="en">
+      <li>a <b>commercial license</b>, including white label;</li>
+      <li><b>custom scenarios</b> (your cases, your jurisdiction, your terminology);</li>
+      <li><b>tailored SCORM packages</b> and their integration into your LMS.</li>
+    </ul>
+    <a class="btn" href="https://www.linkedin.com/in/francois-parlant/"><span data-l="fr">En parler sur LinkedIn</span><span data-l="en">Discuss it on LinkedIn</span></a>
+  </section>
+
+  <section class="box" id="cite">
+    <h2 data-l="fr">📚 Comment citer</h2><h2 data-l="en">📚 How to cite</h2>
+    <p data-l="fr">Dans un article, un syllabus ou un support de cours (format APA) :</p>
+    <p data-l="en">In a paper, a syllabus or course materials (APA style):</p>
+    <ul class="cite" data-l="fr">
+      <li>Parlant, F. (2026). <i>Contract Lab</i> [Logiciel pédagogique]. https://github.com/edu-fpar/contract-lab</li>
+      <li>Parlant, F. (2026). <i>Capital Lab</i> [Logiciel pédagogique]. https://github.com/edu-fpar/capital-lab</li>
+      <li>Parlant, F. (2026). <i>MicroLearn Studio</i> [Logiciel pédagogique]. https://github.com/edu-fpar/micro-learning-app</li>
+      <li>Parlant, F. (2026). <i>Perspective Grid (Regards croisés)</i> [Logiciel pédagogique]. https://github.com/edu-fpar/perspective-grid</li>
+      <li>Parlant, F. (2026). <i>Star Nav</i> [Logiciel pédagogique]. https://github.com/edu-fpar/star-nav</li>
+    </ul>
+    <ul class="cite" data-l="en">
+      <li>Parlant, F. (2026). <i>Contract Lab</i> [Educational software]. https://github.com/edu-fpar/contract-lab</li>
+      <li>Parlant, F. (2026). <i>Capital Lab</i> [Educational software]. https://github.com/edu-fpar/capital-lab</li>
+      <li>Parlant, F. (2026). <i>MicroLearn Studio</i> [Educational software]. https://github.com/edu-fpar/micro-learning-app</li>
+      <li>Parlant, F. (2026). <i>Perspective Grid (Regards croisés)</i> [Educational software]. https://github.com/edu-fpar/perspective-grid</li>
+      <li>Parlant, F. (2026). <i>Star Nav</i> [Educational software]. https://github.com/edu-fpar/star-nav</li>
+    </ul>
+    <p class="muted" data-l="fr">Sur GitHub, le bouton « Cite this repository » de chaque dépôt donne aussi ces références en APA et BibTeX.</p>
+    <p class="muted" data-l="en">On GitHub, each repository's "Cite this repository" button also gives these references in APA and BibTeX.</p>
+  </section>
+</main>
+
+<footer class="wrap">
+  <p><a href="./">← <span data-l="fr">Tous les outils</span><span data-l="en">All tools</span></a> · © 2026 François Parlant · <a href="https://github.com/edu-fpar">GitHub edu-fpar</a></p>
+</footer>
+
+<script>
+  (function () {
+    var html = document.documentElement, lb = document.getElementById('lang'), tb = document.getElementById('theme');
+    function paint() {
+      var en = html.lang === 'en';
+      lb.textContent = en ? 'FR' : 'EN';
+      tb.textContent = html.getAttribute('data-theme') === 'dark' ? '☀️' : '🌙';
+      document.title = en ? 'About — edu-fpar' : 'À propos — edu-fpar';
+    }
+    lb.onclick = function () { html.lang = html.lang === 'en' ? 'fr' : 'en'; try { localStorage.setItem('edu-fpar.lang', html.lang); } catch (e) {} paint(); };
+    tb.onclick = function () { var d = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'; html.setAttribute('data-theme', d); try { localStorage.setItem('edu-fpar.theme', d); } catch (e) {} paint(); };
+    paint();
+  })();
+</script>
+</body>
+</html>
